@@ -18,7 +18,7 @@ describe('pages (semua proyek belum published)', async () => {
     expect(html).not.toContain('id="proyek"')
     expect(html).not.toContain('00 proyek')
     expect(html).not.toContain('Lihat proyek')
-    // "@wandy/ui v0.1" in the spec sheet is fine; the project card title is not.
+    // "@wandy29/ui v0.1" in the spec sheet is fine; the project card title is not.
     expect(html).not.toContain('Membuktikan: saya bisa membangun fondasi')
   })
 

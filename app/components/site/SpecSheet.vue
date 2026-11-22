@@ -3,7 +3,7 @@ const rows = [
   { label: 'Stack', value: 'Vue.js · Nuxt.js · Tailwind CSS' },
   { label: 'Domain', value: 'Merchant & pembayaran' },
   { label: 'Keamanan', value: 'DevSecOps · Secure Coding' },
-  { label: 'Sedang dibangun', value: '@wandy/ui v0.1' },
+  { label: 'Sedang dibangun', value: '@wandy29/ui v0.1' },
 ]
 </script>
 

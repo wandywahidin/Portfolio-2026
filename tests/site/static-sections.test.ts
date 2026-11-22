@@ -78,7 +78,7 @@ describe('SpecSheet', () => {
       ['Stack', 'Vue.js · Nuxt.js · Tailwind CSS'],
       ['Domain', 'Merchant & pembayaran'],
       ['Keamanan', 'DevSecOps · Secure Coding'],
-      ['Sedang dibangun', '@wandy/ui v0.1'],
+      ['Sedang dibangun', '@wandy29/ui v0.1'],
     ])
   })
 })
