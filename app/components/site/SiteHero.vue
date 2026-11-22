@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import SpecSheet from './SpecSheet.vue'
+
 defineProps<{ showProjectsCta: boolean }>()
 const { site } = useAppConfig()
 </script>

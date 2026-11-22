@@ -14,7 +14,7 @@ const rows = [
     class="w-full overflow-hidden md:w-[380px] md:shrink-0"
   >
     <div class="flex items-center justify-between gap-3 border-b border-line px-5 py-3.5">
-      <span class="font-mono text-xs font-medium tracking-[0.08em] text-muted">profile.json</span>
+      <span class="font-mono text-xs font-medium tracking-[0.08em] text-muted uppercase">profile.json</span>
       <UiStatus>Aktif membangun</UiStatus>
     </div>
     <dl>
