@@ -22,8 +22,13 @@ describe('pages (semua proyek belum published)', async () => {
     expect(html).not.toContain('Membuktikan: saya bisa membangun fondasi')
   })
 
+  it('is noindex by default (pre-release gate)', async () => {
+    const html = await $fetch<string>('/')
+    expect(html).toMatch(/<meta name="robots" content="noindex, nofollow">/)
+  })
+
   it('GET /proyek/wandy-ui (unpublished) → 404', async () => {
-    const res = await fetch('/proyek/wandy-ui')
+    const res = await fetch('/proyek/wandy-ui', { headers: { accept: 'text/html' } })
     expect(res.status).toBe(404)
     const body = await res.text()
     expect(body).not.toContain('Membuktikan: saya bisa membangun fondasi')
@@ -39,9 +44,11 @@ describe('pages (semua proyek belum published)', async () => {
   })
 
   it('GET /proyek/tidak-ada → 404 with "Halaman tidak ditemukan"', async () => {
-    const res = await fetch('/proyek/tidak-ada')
+    const res = await fetch('/proyek/tidak-ada', { headers: { accept: 'text/html' } })
     expect(res.status).toBe(404)
-    expect(await res.text()).toContain('Halaman tidak ditemukan')
+    const html = await res.text()
+    expect(html).toContain('Halaman tidak ditemukan')
+    expect(html).toContain('noindex')
   })
 
   it('GET /rute-acak → 404 page', async () => {

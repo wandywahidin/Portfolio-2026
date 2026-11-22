@@ -5,6 +5,7 @@ export default defineAppConfig({
     // Diisi saat akun tersedia; kalau kosong, link-nya tidak dirender.
     github: '',
     npm: '',
-    cvPath: '/cv-wandy-wahidin.pdf',
+    // Isi '/cv-wandy-wahidin.pdf' setelah file PDF ditaruh di public/.
+    cvPath: '',
   },
 })

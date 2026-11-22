@@ -35,7 +35,7 @@ describe('pages (satu proyek published)', async () => {
   })
 
   it('GET /proyek/wandy-ui is still 404', async () => {
-    const res = await fetch('/proyek/wandy-ui')
+    const res = await fetch('/proyek/wandy-ui', { headers: { accept: 'text/html' } })
     expect(res.status).toBe(404)
   })
 })

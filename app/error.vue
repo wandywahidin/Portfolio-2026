@@ -5,6 +5,7 @@ const props = defineProps<{ error: NuxtError }>()
 const notFound = computed(() => props.error.statusCode === 404)
 
 useSeoMeta({
+  robots: 'noindex, nofollow',
   title: () => (notFound.value ? 'Halaman tidak ditemukan — Wandy Wahidin' : 'Terjadi kesalahan — Wandy Wahidin'),
 })
 </script>

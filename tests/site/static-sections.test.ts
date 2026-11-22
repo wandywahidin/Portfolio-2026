@@ -38,6 +38,34 @@ describe('SiteNav', () => {
   })
 })
 
+describe('SiteNav CV button', () => {
+  afterEach(() => {
+    useAppConfig().site.cvPath = ''
+  })
+  it('is hidden while no CV file is configured', async () => {
+    useAppConfig().site.cvPath = ''
+    const w = await mountSuspended(SiteNav, { props: { showProjectsLink: false } })
+    expect(w.text()).not.toContain('Unduh CV')
+    expect(w.find('a[href=""]').exists()).toBe(false)
+  })
+  it('links to the CV when configured', async () => {
+    useAppConfig().site.cvPath = '/cv-wandy-wahidin.pdf'
+    const w = await mountSuspended(SiteNav, { props: { showProjectsLink: false } })
+    expect(w.find('a[href="/cv-wandy-wahidin.pdf"]').text()).toContain('Unduh CV')
+  })
+})
+
+describe('app config default', () => {
+  it('ships without a CV link until public/cv-wandy-wahidin.pdf exists', async () => {
+    const { existsSync } = await import('node:fs')
+    const { resolve } = await import('node:path')
+    const hasPdf = existsSync(resolve(__dirname, '../../public/cv-wandy-wahidin.pdf'))
+    const { readFileSync } = await import('node:fs')
+    const src = readFileSync(resolve(__dirname, '../../app/app.config.ts'), 'utf8')
+    if (!hasPdf) expect(src).toMatch(/cvPath:\s*''/)
+  })
+})
+
 describe('SpecSheet', () => {
   it('renders profile.json and four rows', async () => {
     const w = await mountSuspended(SpecSheet)
