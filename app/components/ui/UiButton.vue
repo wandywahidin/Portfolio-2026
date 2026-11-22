@@ -11,10 +11,10 @@ const props = withDefaults(
 )
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-[8px] border px-5 py-3 text-sm font-semibold leading-none transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
+  'inline-flex items-center justify-center gap-2 rounded-[8px] border px-5 py-3 text-[15px] font-semibold leading-normal transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
 
 const variants = {
-  primary: 'bg-ink text-surface border-ink hover:bg-accent hover:border-accent',
+  primary: 'bg-ink text-on-accent border-ink hover:bg-accent hover:border-accent',
   secondary: 'bg-surface text-ink border-line hover:border-ink',
 } as const
 

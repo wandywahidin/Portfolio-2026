@@ -19,3 +19,22 @@ html {
   color: var(--color-ink);
   font-family: var(--font-sans);
 }
+
+@utility container-site {
+  width: 100%;
+  max-width: calc(1120px + 2 * var(--gutter, 20px));
+  margin-inline: auto;
+  padding-inline: var(--gutter, 20px);
+  @media (width >= 48rem) {
+    --gutter: 40px;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
