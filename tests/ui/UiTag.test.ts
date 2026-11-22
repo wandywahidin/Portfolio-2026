@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { Badge } from '@wandy29/ui'
 import UiTag from '~/components/ui/UiTag.vue'
 
 describe('UiTag', () => {
@@ -13,5 +14,9 @@ describe('UiTag', () => {
     const w = mount(UiTag, { attrs: { class: 'mt-2' }, slots: { default: 'x' } })
     expect(w.classes()).toContain('mt-2')
     expect(w.classes()).toContain('font-mono')
+  })
+  it('is built on Badge from @wandy29/ui', () => {
+    const w = mount(UiTag, { slots: { default: 'x' } })
+    expect(w.findComponent(Badge).exists()).toBe(true)
   })
 })

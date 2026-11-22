@@ -5,7 +5,7 @@
       <UiButton tabindex="-1">Simpan</UiButton>
       <UiButton variant="secondary" tabindex="-1">Batal</UiButton>
     </div>
-    <div class="rounded-[8px] border-[1.5px] border-accent bg-surface px-3.5 py-3 text-sm text-muted">
+    <div class="rounded-[8px] border-[1.5px] border-accent bg-surface px-3.5 py-3 text-sm text-muted-foreground">
       Nama merchant
     </div>
     <div class="flex flex-wrap gap-2">

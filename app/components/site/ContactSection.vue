@@ -30,7 +30,7 @@ const socials = computed(() =>
       </div>
 
       <footer
-        class="flex flex-col gap-4 border-t border-muted pt-6 md:flex-row md:items-start md:justify-between"
+        class="flex flex-col gap-4 border-t border-muted-foreground pt-6 md:flex-row md:items-start md:justify-between"
       >
         <p class="font-mono text-xs opacity-70">
           © 2026 Wandy Wahidin · Dibangun dengan Nuxt &amp; Tailwind CSS

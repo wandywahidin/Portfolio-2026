@@ -3,7 +3,7 @@ defineProps<{ showProjectsLink: boolean }>()
 const { site } = useAppConfig()
 
 const linkClass =
-  'rounded-[4px] text-[15px] font-medium text-muted transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
+  'rounded-[4px] text-[15px] font-medium text-muted-foreground transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
 </script>
 
 <template>

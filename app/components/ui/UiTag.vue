@@ -1,7 +1,12 @@
+<script setup lang="ts">
+import { Badge } from '@wandy29/ui'
+</script>
+
 <template>
-  <span
-    class="inline-flex items-center rounded-[6px] border border-line bg-bg px-[10px] py-[5px] font-mono text-xs font-medium leading-normal text-muted"
+  <Badge
+    variant="outline"
+    class="rounded-[6px] border-line bg-bg px-[10px] py-[5px] font-mono leading-normal text-muted-foreground"
   >
     <slot />
-  </span>
+  </Badge>
 </template>

@@ -12,6 +12,13 @@ export default defineConfig({
           include: ['tests/**/*.test.ts'],
           exclude: ['tests/e2e/**'],
           environment: 'nuxt',
+          // Prebundle Reka UI (ratusan modul) sekali, supaya setup Nuxt per file tidak
+          // mentransformasi graf impornya satu per satu dan melewati hookTimeout.
+          deps: {
+            optimizer: {
+              client: { enabled: true, include: ['reka-ui', '@wandy29/ui'] },
+            },
+          },
         },
       }),
       {

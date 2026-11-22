@@ -36,7 +36,7 @@ const linkClass =
     <SiteNav :show-projects-link="true" />
     <main class="container-site py-12 md:py-20">
       <article class="mx-auto flex max-w-[720px] flex-col gap-6">
-        <NuxtLink to="/#proyek" :class="[linkClass, 'self-start text-muted']">
+        <NuxtLink to="/#proyek" :class="[linkClass, 'self-start text-muted-foreground']">
           <span aria-hidden="true">←</span> Semua proyek
         </NuxtLink>
         <div class="flex items-center gap-3">
@@ -47,7 +47,7 @@ const linkClass =
           {{ project.title }}
         </h1>
         <p class="text-lg leading-normal font-semibold text-accent">{{ project.proves }}</p>
-        <p class="text-[17px] leading-[1.65] text-muted">{{ project.summary }}</p>
+        <p class="text-[17px] leading-[1.65] text-muted-foreground">{{ project.summary }}</p>
         <ul v-if="project.tags.length" class="flex flex-wrap gap-2">
           <li v-for="t in project.tags" :key="t"><UiTag>{{ t }}</UiTag></li>
         </ul>

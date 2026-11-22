@@ -25,7 +25,7 @@ const home = computed(() => selectHomeProjects(props.projects))
             {{ projectsHeading(home.count) }}
           </h2>
         </div>
-        <p class="shrink-0 font-mono text-[13px] text-muted">{{ formatProjectCount(home.count) }}</p>
+        <p class="shrink-0 font-mono text-[13px] text-muted-foreground">{{ formatProjectCount(home.count) }}</p>
       </header>
 
       <div class="flex flex-col gap-6">

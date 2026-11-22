@@ -17,7 +17,7 @@ useSeoMeta({
       <h1 class="text-[40px] leading-[1.06] font-extrabold tracking-[-0.03em] text-ink md:text-[56px]">
         {{ notFound ? 'Halaman tidak ditemukan' : 'Terjadi kesalahan' }}
       </h1>
-      <p class="max-w-[520px] text-[17px] leading-[1.6] text-muted">
+      <p class="max-w-[520px] text-[17px] leading-[1.6] text-muted-foreground">
         {{ notFound ? 'Alamat ini tidak ada atau belum dipublikasikan.' : 'Silakan coba lagi sebentar lagi.' }}
       </p>
       <UiButton href="/">Kembali ke beranda</UiButton>

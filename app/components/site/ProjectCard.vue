@@ -30,7 +30,7 @@ const linkClass =
       :class="featured ? 'md:w-[440px] md:shrink-0 md:pt-2' : ''"
     >
       <div class="flex items-center gap-3">
-        <span data-test="project-index" class="font-mono text-[13px] font-medium text-muted">
+        <span data-test="project-index" class="font-mono text-[13px] font-medium text-muted-foreground">
           {{ number }}
         </span>
         <UiStatus v-if="project.status" data-test="project-status">{{ project.status }}</UiStatus>
@@ -39,7 +39,7 @@ const linkClass =
         {{ project.title }}
       </h3>
       <p class="text-base leading-normal font-semibold text-accent">{{ project.proves }}</p>
-      <p class="text-base leading-[1.6] text-muted">{{ project.summary }}</p>
+      <p class="text-base leading-[1.6] text-muted-foreground">{{ project.summary }}</p>
       <ul v-if="project.tags.length" class="flex flex-wrap gap-2">
         <li v-for="t in project.tags" :key="t"><UiTag>{{ t }}</UiTag></li>
       </ul>

@@ -15,7 +15,7 @@ const certs = [
           Saya terbiasa bekerja di lingkungan yang menuntut ketelitian: sistem yang dipakai banyak
           merchant, standar keamanan yang ketat, dan kolaborasi erat dengan tim backend.
         </p>
-        <p class="text-[17px] leading-[1.65] text-muted">
+        <p class="text-[17px] leading-[1.65] text-muted-foreground">
           Di luar pekerjaan produk, saya suka membuat alat yang menghemat kerja tim — dari otomasi
           kecil sampai pustaka komponen.
         </p>
@@ -38,7 +38,7 @@ const certs = [
               class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-t border-line py-3"
             >
               <span class="text-[15px] font-semibold text-ink">{{ c.title }}</span>
-              <span class="font-mono text-xs text-muted">{{ c.issuer }}</span>
+              <span class="font-mono text-xs text-muted-foreground">{{ c.issuer }}</span>
             </li>
           </ul>
         </div>

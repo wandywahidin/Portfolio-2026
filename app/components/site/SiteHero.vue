@@ -15,7 +15,7 @@ const { site } = useAppConfig()
         >
           Antarmuka yang andal untuk produk keuangan.
         </h1>
-        <p class="max-w-[600px] text-[17px] leading-[1.6] text-muted md:text-[19px]">
+        <p class="max-w-[600px] text-[17px] leading-[1.6] text-muted-foreground md:text-[19px]">
           Saya Wandy — 5 tahun membangun antarmuka untuk produk merchant dan pembayaran. Saya
           fokus di Vue.js dan Nuxt.js, dan senang membangun fondasi UI yang bisa dipakai ulang
           lintas produk.

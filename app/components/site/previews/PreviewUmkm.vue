@@ -15,13 +15,13 @@ const rp = (n: number) => `Rp ${n.toLocaleString('id-ID')}`
 <template>
   <div aria-hidden="true" class="flex h-[300px] flex-col justify-center gap-3.5 p-5 md:h-[320px] md:p-7">
     <div class="flex flex-col gap-1.5 rounded-[8px] border border-line bg-surface p-4">
-      <span class="font-mono text-[11px] text-muted">HPP per porsi · ilustrasi</span>
+      <span class="font-mono text-[11px] text-muted-foreground">HPP per porsi · ilustrasi</span>
       <span class="text-[28px] leading-none font-extrabold tracking-[-0.02em] text-ink">{{ rp(total) }}</span>
     </div>
     <div v-for="r in rows" :key="r.name" class="flex flex-col gap-1.5">
       <div class="flex justify-between gap-3">
         <span class="text-[13px] font-medium text-ink">{{ r.name }}</span>
-        <span class="font-mono text-xs text-muted">{{ rp(r.cost) }}</span>
+        <span class="font-mono text-xs text-muted-foreground">{{ rp(r.cost) }}</span>
       </div>
       <div class="h-1.5 w-full max-w-[300px] overflow-hidden rounded-[3px] bg-line">
         <div class="h-full rounded-[3px] bg-accent" :style="{ width: `${(r.cost / max) * 57}%` }" />
