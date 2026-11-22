@@ -37,7 +37,8 @@ describe('pages (semua proyek belum published)', async () => {
   it('client content dump does not leak unpublished projects', async () => {
     const res = await fetch('/__nuxt_content/proyek/sql_dump.txt')
     const raw = await res.text()
-    const sql = res.ok ? gunzipSync(Buffer.from(raw, 'base64')).toString('utf8') : ''
+    expect(res.ok, 'content dump URL must exist, otherwise this leak check is vacuous').toBe(true)
+    const sql = gunzipSync(Buffer.from(raw, 'base64')).toString('utf8')
     expect(sql).not.toContain('Pembuat Panduan Interaktif')
     expect(sql).not.toContain('Membuktikan: saya bisa membangun fondasi')
     expect(sql).not.toContain('Aplikasi Keuangan UMKM')
