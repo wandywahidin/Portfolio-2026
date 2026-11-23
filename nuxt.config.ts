@@ -12,6 +12,12 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  runtimeConfig: {
+    public: {
+      // Set NUXT_PUBLIC_INDEXABLE=true di hosting saat rilis resmi.
+      indexable: false,
+    },
+  },
   app: {
     head: {
       htmlAttrs: { lang: 'id' },
