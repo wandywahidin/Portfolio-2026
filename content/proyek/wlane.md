@@ -12,7 +12,7 @@ links:
   - label: "GitHub"
     url: "https://github.com/wandywahidin/WLane"
 preview: "guide"
-published: false
+published: true
 ---
 
 ## Masalah
