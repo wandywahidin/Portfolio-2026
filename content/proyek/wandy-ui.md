@@ -14,7 +14,7 @@ links:
   - label: "npm"
     url: "https://www.npmjs.com/package/@wandy29/ui"
 preview: "ui"
-published: false
+published: true
 ---
 
 ## Masalah
