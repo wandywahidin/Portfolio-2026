@@ -29,9 +29,11 @@ describe('studi kasus', () => {
     })
   }
 
-  it('wandy-ui.md sudah punya draf untuk kelima bagian', () => {
-    const s = sections(readFileSync(join(dir, 'wandy-ui.md'), 'utf8'))
-    expect(Object.keys(s)).toEqual(HEADINGS)
-    for (const h of HEADINGS) expect(s[h], `## ${h}`).toBeTruthy()
-  })
+  for (const f of ['wandy-ui.md', 'wlane.md']) {
+    it(`${f} sudah punya draf untuk kelima bagian`, () => {
+      const s = sections(readFileSync(join(dir, f), 'utf8'))
+      expect(Object.keys(s)).toEqual(HEADINGS)
+      for (const h of HEADINGS) expect(s[h], `## ${h}`).toBeTruthy()
+    })
+  }
 })

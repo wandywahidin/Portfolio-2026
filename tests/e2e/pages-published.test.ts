@@ -9,20 +9,20 @@ const target = fileURLToPath(new URL('../../content/proyek/contoh.md', import.me
 
 copyFileSync(fixture, target)
 
-describe('pages (satu proyek published)', async () => {
+// Fixture contoh.md + wandy-ui.md = dua proyek published.
+describe('pages (dua proyek published)', async () => {
   afterAll(() => rmSync(target, { force: true }))
 
   await setup({ rootDir, server: true, browser: false })
 
-  it('GET / shows the published project as the only card', async () => {
+  it('GET / shows both published projects in the grid layout', async () => {
     const html = await $fetch<string>('/')
-    expect(html).toContain('id="proyek"')
     expect(html).toContain('Contoh Proyek')
-    expect(html).toContain('01 proyek')
-    expect(html).toContain('Proyek pilihan.')
-    expect(html).not.toContain('data-test="project-grid"')
-    // unpublished ones stay hidden
-    expect(html).not.toContain('Pembuat Panduan Interaktif')
+    expect(html).toContain('@wandy29/ui')
+    expect(html).toContain('02 proyek')
+    expect(html).toContain('Dua proyek, masing-masing membuktikan satu hal.')
+    expect(html).toContain('data-test="project-grid"')
+    expect(html).not.toContain('WLane')
   })
 
   it('GET /proyek/contoh → 200 with the title in h1', async () => {
@@ -34,8 +34,4 @@ describe('pages (satu proyek published)', async () => {
     expect(html).toContain('Isi fixture.')
   })
 
-  it('GET /proyek/wandy-ui is still 404', async () => {
-    const res = await fetch('/proyek/wandy-ui', { headers: { accept: 'text/html' } })
-    expect(res.status).toBe(404)
-  })
 })

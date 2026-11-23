@@ -29,8 +29,8 @@ describe('content/proyek/wandy-ui.md', () => {
     expect(links).toContain('https://www.npmjs.com/package/@wandy29/ui')
   })
 
-  it('tetap belum published sampai studi kasusnya diisi', () => {
-    expect(field('published')).toBe('false')
+  it('sudah published (studi kasusnya lengkap)', () => {
+    expect(field('published')).toBe('true')
   })
 })
 
