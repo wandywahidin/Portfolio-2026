@@ -2,7 +2,7 @@
 title: "WLane"
 order: 2
 featured: false
-proves: "Membuktikan: saya bisa mengirim produk utuh dari ujung ke ujung."
+proves: ""
 summary: "Ubah screenshot website menjadi panduan interaktif dengan hotspot, sorotan area, dan modal, lalu bagikan lewat link atau iframe. Multi-pengguna, dengan batas pemakaian yang dijaga database."
 tags: ["Nuxt", "Supabase", "TypeScript"]
 status: "Live"
@@ -13,6 +13,7 @@ links:
     url: "https://github.com/wandywahidin/WLane"
 preview: "guide"
 published: true
+caseStudy: false
 ---
 
 ## Masalah

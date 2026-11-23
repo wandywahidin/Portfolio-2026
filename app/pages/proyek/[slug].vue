@@ -10,8 +10,8 @@ const { data: page } = await useAsyncData(`proyek-${path}`, () =>
   queryCollection('proyek').path(path).first(),
 )
 
-// Proyek yang belum published diperlakukan seolah tidak ada.
-if (!page.value || page.value.published !== true) {
+// Proyek yang belum published, atau studi kasusnya dimatikan, diperlakukan seolah tidak ada.
+if (!page.value || page.value.published !== true || page.value.caseStudy === false) {
   throw createError({ statusCode: 404, statusMessage: 'Halaman tidak ditemukan', fatal: true })
 }
 
@@ -46,7 +46,7 @@ const linkClass =
         <h1 class="text-[34px] leading-[1.1] font-extrabold tracking-[-0.03em] break-words text-ink md:text-5xl">
           {{ project.title }}
         </h1>
-        <p class="text-lg leading-normal font-semibold text-accent">{{ project.proves }}</p>
+        <p v-if="project.proves" class="text-lg leading-normal font-semibold text-accent">{{ project.proves }}</p>
         <p class="text-[17px] leading-[1.65] text-muted-foreground">{{ project.summary }}</p>
         <ul v-if="project.tags.length" class="flex flex-wrap gap-2">
           <li v-for="t in project.tags" :key="t"><UiTag>{{ t }}</UiTag></li>

@@ -2,7 +2,7 @@
 title: "@wandy29/ui"
 order: 1
 featured: true
-proves: "Membuktikan: saya bisa membangun fondasi, bukan cuma halaman."
+proves: ""
 summary: "Design system Vue + Tailwind dengan komponen yang bisa dikustomisasi. Komponen sederhana dibuat sendiri, komponen kompleks di atas Reka UI. Terdokumentasi di Storybook dan terbit di npm."
 tags: ["Vue 3", "Tailwind", "Reka UI", "Storybook"]
 status: "v0.1.0 di npm"
@@ -15,6 +15,7 @@ links:
     url: "https://www.npmjs.com/package/@wandy29/ui"
 preview: "ui"
 published: true
+caseStudy: false
 ---
 
 ## Masalah

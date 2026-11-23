@@ -30,7 +30,8 @@ describe('content/proyek/wlane.md', () => {
     expect(front).toContain('url: "https://github.com/wandywahidin/WLane"')
   })
 
-  it('tetap belum published sampai drafnya ditinjau', () => {
-    expect(field('published')).toBe('false')
+  it('sudah published, studi kasusnya dimatikan dulu', () => {
+    expect(field('published')).toBe('true')
+    expect(field('caseStudy')).toBe('false')
   })
 })

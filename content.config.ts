@@ -46,6 +46,7 @@ export default defineContentConfig({
         preview: z.enum(['ui', 'guide', 'umkm', 'image']),
         image: z.string().optional(),
         published: z.boolean().default(false),
+        caseStudy: z.boolean().default(true),
       }),
     }),
   },

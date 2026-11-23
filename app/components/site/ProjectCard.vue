@@ -38,7 +38,9 @@ const linkClass =
       <h3 class="text-[22px] leading-tight font-bold tracking-[-0.01em] break-words text-ink md:text-[26px]">
         {{ project.title }}
       </h3>
-      <p class="text-base leading-normal font-semibold text-accent">{{ project.proves }}</p>
+      <p v-if="project.proves" data-test="project-proves" class="text-base leading-normal font-semibold text-accent">
+        {{ project.proves }}
+      </p>
       <p class="text-base leading-[1.6] text-muted-foreground">{{ project.summary }}</p>
       <ul v-if="project.tags.length" class="flex flex-wrap gap-2">
         <li v-for="t in project.tags" :key="t"><UiTag>{{ t }}</UiTag></li>
@@ -51,7 +53,7 @@ const linkClass =
             </a>
           </li>
         </ul>
-        <NuxtLink :to="project.path" :class="linkClass">
+        <NuxtLink v-if="project.caseStudy !== false" :to="project.path" :class="linkClass">
           Studi kasus <span aria-hidden="true">→</span>
           <span class="sr-only">: {{ project.title }}</span>
         </NuxtLink>

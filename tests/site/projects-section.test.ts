@@ -92,6 +92,25 @@ describe('ProjectCard', () => {
     expect(cs?.attributes('href')).toBe('/proyek/abc')
   })
 
+  it('hides the "Membuktikan" line when proves is empty', async () => {
+    const w = await mountSuspended(ProjectCard, { props: { project: p({ proves: '' }), index: 1 } })
+    expect(w.find('[data-test=project-proves]').exists()).toBe(false)
+  })
+
+  it('shows the "Membuktikan" line when proves is filled', async () => {
+    const w = await mountSuspended(ProjectCard, { props: { project: p(), index: 1 } })
+    expect(w.find('[data-test=project-proves]').text()).toBe('Membuktikan: sesuatu.')
+  })
+
+  it('has no case study link when caseStudy is false', async () => {
+    const w = await mountSuspended(ProjectCard, {
+      props: { project: p({ caseStudy: false }), index: 1 },
+    })
+    expect(w.findAll('a').some(a => a.text().includes('Studi kasus'))).toBe(false)
+    // external links stay
+    expect(w.find('[data-test=project-links]').exists()).toBe(true)
+  })
+
   it('renders an <img> with alt for preview "image"', async () => {
     const w = await mountSuspended(ProjectCard, {
       props: { project: p({ preview: 'image', image: '/shot.png', title: 'Foto' }), index: 2 },

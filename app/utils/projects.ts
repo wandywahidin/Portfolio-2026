@@ -16,6 +16,8 @@ export interface Project {
   preview: 'ui' | 'guide' | 'umkm' | 'image'
   image?: string
   published: boolean
+  /** false: kartu tampil tanpa link "Studi kasus", dan halaman detailnya 404. */
+  caseStudy?: boolean
 }
 
 export interface HomeProjects {
